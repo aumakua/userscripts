@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         serpFilter
 // @namespace    aumakua
-// @version      0.4
+// @version      0.5
 // @description  remove crappy yandex zen (and any other sites) from yandex and google search output
 // @author       aumakua
 // @include      *yandex.ru/search*
@@ -10,12 +10,13 @@
 // @run-at document-end
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
     let serp_id = '';
     let a_id = '';
-    const garbage = ['zen.yandex.ru'];
+    const garbage = ['zen.yandex.ru']; // you can add other crappy sites here
 
+    // you can use other search engines by adding more if blocks
     if (document.location.hostname.includes('yandex')) {
         serp_id = 'li.serp-item';
         a_id = 'a.link';
