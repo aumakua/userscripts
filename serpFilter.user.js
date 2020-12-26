@@ -4,6 +4,7 @@
 // @version      1.01
 // @description  remove crappy yandex zen (and any other sites) from yandex and google search results
 // @author       aumakua
+// @license      MIT
 // @include      *yandex.ru/search*
 // @include      *google.com/search*
 // @grant        none
