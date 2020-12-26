@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         serpFilter
 // @namespace    aumakua
-// @version      1.0
+// @version      1.01
 // @description  remove crappy yandex zen (and any other sites) from yandex and google search results
 // @author       aumakua
 // @include      *yandex.ru/search*
@@ -31,7 +31,7 @@
             const link = snippet.querySelector(link_id);
             for (let piece of crap) {
                 if (link.href.includes(piece)) {
-                    snippet.remove();
+                    snippet.style.display = 'none';
                     break;
                 }
             }
