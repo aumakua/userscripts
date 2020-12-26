@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         serpFilter
 // @namespace    aumakua
-// @version      0.7
-// @description  remove crappy yandex zen (and any other sites) from yandex and google search output
+// @version      0.8
+// @description  remove crappy yandex zen (and any other sites) from yandex and google search results
 // @author       aumakua
 // @include      *yandex.ru/search*
 // @include      *google.com/search*
@@ -12,26 +12,26 @@
 
 (function () {
     'use strict';
-    let serp_id = '';
-    let a_id = '';
+    let snippet_id = '';
+    let link_id = '';
     const garbage = ['zen.yandex.ru']; // you can add other crappy sites here
 
     if (document.location.hostname.includes('yandex')) {
-        serp_id = 'li.serp-item';
-        a_id = 'a.link';
+        snippet_id = 'li.serp-item';
+        link_id = 'a.link';
     }
     else if (document.location.hostname.includes('google')) {
-        serp_id = 'div.g';
-        a_id = 'a';
+        snippet_id = 'div.g';
+        link_id = 'a';
     };
 
     const remove_crap = () => {
-        const serps = document.querySelectorAll(serp_id);
-        for (let serp of serps) {
-            const link = serp.querySelector(a_id);
+        const snippets = document.querySelectorAll(snippet_id);
+        for (let snippet of snippets) {
+            const link = snippet.querySelector(link_id);
             for (let crap of garbage) {
                 if (link.href.includes(crap)) {
-                    serp.remove();
+                    snippet.remove();
                 }
             }
         }
