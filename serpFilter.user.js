@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         serpFilter
 // @namespace    aumakua
-// @version      1.01
+// @version      1.03
 // @description  remove crappy yandex zen (and any other sites) from yandex and google search results
 // @author       aumakua
 // @license      MIT
-// @include      *yandex.ru/search*
-// @include      *google.com/search*
+// @match        *://*yandex.ru/search*
+// @match        *://*google.com/search*
 // @grant        none
-// @run-at document-end
+// @run-at       document-end
 // ==/UserScript==
 
 (function () {
