@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           serpFilter
 // @namespace      aumakua
-// @version        1.0.5
-// @description    Remove crappy yandex zen (and any other sites) from yandex and google search results
-// @description:ru Удаляет ссылки на Яндекс.Дзен (можно добавлять и другие сайты) из результатов поиска гугла и яндекса
+// @version        1.1.0
+// @description    Remove crappy yandex zen (and any other sites) from yandex and google search results.
+// @description:ru Удаляет ссылки на Яндекс.Дзен (можно добавлять и другие сайты) из результатов поиска гугла и яндекса.
 // @author         aumakua
 // @license        MIT
 // @match          *://*yandex.ru/search*
