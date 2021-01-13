@@ -25,7 +25,7 @@
     else if (document.location.hostname.includes('google')) {
         snippet_id = 'div.g';
         link_id = 'a';
-    };
+    }
 
     const remove_crap = () => {
         const snippets = document.querySelectorAll(snippet_id);
