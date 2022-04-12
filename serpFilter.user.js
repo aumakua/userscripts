@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           serpFilter
 // @namespace      aumakua
-// @version        1.1.0
+// @version        1.1.1
 // @description    Remove crappy yandex zen (and any other sites) from yandex and google search results.
 // @description:ru Удаляет ссылки на Яндекс.Дзен (можно добавлять и другие сайты) из результатов поиска гугла и яндекса.
 // @author         aumakua
@@ -9,7 +9,6 @@
 // @match          *://*yandex.ru/search*
 // @match          *://*google.com/search*
 // @grant          none
-// @run-at         document-end
 // ==/UserScript==
 
 (function () {
@@ -30,11 +29,13 @@
     const remove_crap = () => {
         const snippets = document.querySelectorAll(snippet_id);
         for (let snippet of snippets) {
-            const link = snippet.querySelector(link_id);
+            const links = snippet.querySelectorAll(link_id);
             for (let piece of crap) {
-                if (link.href.includes(piece)) {
-                    snippet.style.display = 'none';
-                    break;
+                for (let link of links) {
+                    if (link.href.includes(piece)) {
+                        snippet.style.display = 'none';
+                        break;
+                    }
                 }
             }
         }
