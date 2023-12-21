@@ -8,7 +8,8 @@
 // @license        MIT
 // @match          *://*yandex.ru/search*
 // @match          *://*ya.ru/search*
-// @match          *://*google.com/search*
+// @match          *://google.com/search*
+// @match          *://www.google.com/search*
 // @grant          none
 // ==/UserScript==
 
